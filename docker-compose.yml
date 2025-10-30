@@ -1,0 +1,20 @@
+# docker-compose.yml
+
+services:
+  # Backend Service (Node.js API)
+  backend:
+    build: ./backend         # Path to the backend Dockerfile
+    ports:
+      - "3001:3001"         # Map host port 3001 to container port 3001
+    volumes:
+      - ./backend:/app      # Mount local code for live reloading (optional, good for dev)
+    environment:
+      - NODE_ENV=development
+
+  # Frontend Service (React App)
+  frontend:
+    build: ./frontend        # Path to the frontend Dockerfile
+    ports:
+      - "80:80"             # Map host port 80 to container port 80 (Nginx)
+    depends_on:
+      - backend             # Wait for the backend to start first
