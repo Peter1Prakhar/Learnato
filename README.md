@@ -4,7 +4,7 @@ This project is a microservice-based discussion forum built for the Learnato Hac
 
 It features a fast, real-time-ready forum where users can post questions, add replies, and upvote content.
 
-**Live Demo:** [Link to your deployed URL]
+**Live Demo:** [[Link to your deployed URL]](https://learnato.vercel.app/)
 
 ## Tech Stack
 
@@ -46,3 +46,20 @@ cd backend
 npm install
 npm start
 # Server runs on http://localhost:3001
+```
+**2. Run Frontend
+```bash
+cd frontend
+npm install
+npm start
+# App runs on http://localhost:3000
+```
+## API Endpoints
+
+| Method | Endpoint            | Description                     |
+|---------|---------------------|---------------------------------|
+| GET     | `/posts`            | Get all posts (sorted by votes) |
+| POST    | `/posts`            | Create a new post               |
+| GET     | `/posts/:id`        | Get a single post               |
+| POST    | `/posts/:id/reply`  | Add a reply to a post           |
+| POST    | `/posts/:id/upvote` | Upvote a post                   |
